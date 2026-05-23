@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CONARH 2026 - O Maior Evento de RH</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #2D1B3D 0%, #1a0f24 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #2D1B3D 0%, #1a0f24 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .hero-wrapper {
+            width: 100%;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* ═══════════════════════════════════ */
+        /* LEFT SECTION - LOGO                 */
+        /* ═══════════════════════════════════ */
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-conarh {
+            margin-bottom: 16px;
+            animation: slide-in-left 0.8s ease-out;
+        }
+
+        .logo-conarh svg {
+            width: 140px;
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.3;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            animation: fade-in-up 0.8s ease-out 0.2s both;
+        }
+
+        .tagline .brasil {
+            color: #E63D5F;
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .tagline .global {
+            color: #E63D5F;
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .tagline .futuro {
+            color: #ffffff;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .tagline .futuro .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        /* ═══════════════════════════════════ */
+        /* CENTER SECTION - TEXT              */
+        /* ═══════════════════════════════════ */
+        .center-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 32px;
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.2;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: slide-in-up 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 28px;
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.3;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: slide-in-up 0.8s ease-out 0.1s both;
+        }
+
+        .hero-subtitle-end {
+            font-size: 24px;
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: slide-in-up 0.8s ease-out 0.2s both;
+        }
+
+        .hero-description {
+            font-size: 12px;
+            color: #ffffff;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            animation: fade-in-up 0.8s ease-out 0.3s both;
+        }
+
+        .hero-description strong {
+            color: #D4AF37;
+            font-weight: 700;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(90deg, #E63D5F 0%, #ff5577 100%);
+            color: #ffffff;
+            padding: 14px 36px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            animation: fade-in-up 0.8s ease-out 0.4s both;
+            box-shadow: 0 4px 15px rgba(230, 61, 95, 0.4);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(230, 61, 95, 0.6);
+        }
+
+        /* ═══════════════════════════════════ */
+        /* RIGHT SECTION - DIGITAL            */
+        /* ═══════════════════════════════════ */
+        .right-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .digital-container {
+            width: 160px;
+            height: 220px;
+            position: relative;
+            animation: float-element 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.25));
+        }
+
+        .fingerprint-svg {
+            width: 100%;
+            height: 100%;
+            animation: rotate-slow 25s linear infinite;
+        }
+
+        @keyframes slide-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float-element {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(3deg);
+            }
+        }
+
+        @keyframes rotate-slow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
+            }
+            50% {
+                filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.4));
+            }
+        }
+
+        /* ═══════════════════════════════════ */
+        /* RESPONSIVE                          */
+        /* ═══════════════════════════════════ */
+        @media (max-width: 768px) {
+            .hero-wrapper {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .left-section {
+                order: 1;
+            }
+
+            .center-section {
+                order: 2;
+            }
+
+            .right-section {
+                order: 3;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 24px;
+            }
+
+            .hero-subtitle-end {
+                font-size: 20px;
+            }
+
+            .logo-conarh svg {
+                width: 120px;
+            }
+
+            .tagline {
+                font-size: 12px;
+            }
+
+            .tagline .brasil,
+            .tagline .global {
+                font-size: 14px;
+            }
+
+            .digital-container {
+                width: 140px;
+                height: 190px;
+            }
+
+            .container {
+                min-height: auto;
+                padding: 30px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-wrapper {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .hero-title {
+                font-size: 24px;
+                letter-spacing: 1px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+                letter-spacing: 0.5px;
+            }
+
+            .hero-subtitle-end {
+                font-size: 18px;
+            }
+
+            .hero-description {
+                font-size: 11px;
+                line-height: 1.6;
+            }
+
+            .logo-conarh svg {
+                width: 100px;
+            }
+
+            .tagline {
+                font-size: 11px;
+            }
+
+            .tagline .brasil,
+            .tagline .global {
+                font-size: 12px;
+            }
+
+            .digital-container {
+                width: 120px;
+                height: 160px;
+            }
+
+            .container {
+                min-height: auto;
+                padding: 24px 12px;
+            }
+
+            .hero-cta {
+                padding: 12px 28px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero-wrapper">
+            <!-- LEFT: LOGO -->
+            <div class="left-section">
+                <div class="logo-conarh">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- CONARH 26 Logo -->
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#F5D547;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- CONARH text -->
+                        <text x="100" y="70" font-size="56" font-weight="700" text-anchor="middle" fill="url(#logoGrad)" font-family="Arial, sans-serif">CONARH</text>
+                        <text x="100" y="100" font-size="48" font-weight="700" text-anchor="middle" fill="url(#logoGrad)" font-family="Arial, sans-serif">26</text>
+                        
+                        <!-- Checkered pattern for "O" -->
+                        <circle cx="45" cy="50" r="12" fill="url(#logoGrad)" opacity="0.7"/>
+                    </svg>
+                </div>
+
+                <div class="tagline">
+                    <span class="brasil">BRASIL</span>
+                    <span class="global">GLOBAL</span>
+                    <span class="futuro">
+                        O FUTURO<br>
+                        DA GESTÃO<br>
+                        É HUMANO
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#D4AF37" stroke-width="2">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+
+            <!-- CENTER: MAIN TEXT -->
+            <div class="center-section">
+                <h1 class="hero-title">O MAIOR</h1>
+                <h2 class="hero-subtitle">EVENTO DE RH</h2>
+                <h3 class="hero-subtitle-end">DA AMÉRICA LATINA!</h3>
+
+                <p class="hero-description">
+                    De <strong>18 a 20 de agosto</strong>, no <strong>São Paulo EXPO</strong>,<br>
+                    desenvolva-se com conteúdos atuais e aprenda<br>
+                    a colocá-los em prática em um dos maiores eventos<br>
+                    de RH e gestão de pessoas do MUNDO: <strong>CONARH 2026!</strong>
+                </p>
+
+                <a href="https://ecmabrhbrasil.prowebseguros.com/quest_hub?token=97SN73+WghUrvImIsOwOj04BJmHld3UOxI64NKV3qhgysZWAKvIjPeJ1e2gYlNUZSjGg7ARs6k2xawSichI5pFsoRFGVWgRcG8W0TgfepcO9LyvaLjCn/Tu84RjPBfkl7+Y6wy+EorzAayJugsMrK2osskxyYsRzuWadWqzAMesUriFA3A2AR3qNXjZv6od9&parm1=CONARH%202026&parm2=Inscri%C3%A7%C3%B5es&parm3=Associado&parm4=1&parm5=&agenda=ABRH_INSC_PF_EXPO_Externo_V3&id=Publico" target="_blank" class="hero-cta">
+                    Novidades de 2026
+                </a>
+            </div>
+
+            <!-- RIGHT: DIGITAL FINGERPRINT -->
+            <div class="right-section">
+                <div class="digital-container">
+                    <svg class="fingerprint-svg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="fingerprintGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:0.95" />
+                                <stop offset="40%" style="stop-color:#7B2CBF;stop-opacity:0.95" />
+                                <stop offset="100%" style="stop-color:#E63D5F;stop-opacity:0.95" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Concentric circles -->
+                        <circle cx="100" cy="140" r="100" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.9"/>
+                        <circle cx="100" cy="140" r="88" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.8"/>
+                        <circle cx="100" cy="140" r="76" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.7"/>
+                        <circle cx="100" cy="140" r="64" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.6"/>
+                        <circle cx="100" cy="140" r="52" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.5"/>
+                        <circle cx="100" cy="140" r="40" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.4"/>
+                        <circle cx="100" cy="140" r="28" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.3"/>
+
+                        <!-- Curved lines for fingerprint effect -->
+                        <path d="M 100 45 Q 130 60 145 85 Q 155 110 140 135" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.7"/>
+                        <path d="M 100 45 Q 70 60 55 85 Q 45 110 60 135" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.7"/>
+                        <path d="M 100 235 Q 130 220 145 195 Q 155 170 140 145" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.7"/>
+                        <path d="M 100 235 Q 70 220 55 195 Q 45 170 60 145" fill="none" stroke="url(#fingerprintGradient)" stroke-width="3" opacity="0.7"/>
+
+                        <!-- Center point -->
+                        <circle cx="100" cy="140" r="12" fill="url(#fingerprintGradient)" opacity="0.9"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
